@@ -2,17 +2,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter first number: ");
-        double num1 = scanner.nextDouble();
+        double num1 = 10.0; // Default value for num1
+        double num2 = 5.0;  // Default value for num2
+        char operation = '+'; // Default operation
 
-        System.out.println("Enter second number: ");
-        double num2 = scanner.nextDouble();
+        System.out.println("Running arithmetic operations...");
+        System.out.println("First number: " + num1);
+        System.out.println("Second number: " + num2);
+        System.out.println("Operation: " + operation);
 
-        System.out.println("Enter an operation (+, -, *, /): ");
-        char operation = scanner.next().charAt(0);
+        double result = calculateResult(num1, num2, operation);
+        System.out.println("The result is: " + result);
+    }
 
-        double result;
+    private static double calculateResult(double num1, double num2, char operation) {
+        double result = 0;
         switch (operation) {
             case '+':
                 result = num1 + num2;
@@ -28,9 +32,8 @@ public class Main {
                 break;
             default:
                 System.out.println("Error: invalid operation");
-                return;
+                break;
         }
-
-        System.out.println("The result is: " + result);
+        return result;
     }
 }
